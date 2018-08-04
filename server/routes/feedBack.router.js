@@ -5,7 +5,7 @@ const pool = require('../modules/pool.js');
 
 
 router.post('/', (req, res) => {
-    console.log('GET /api/admin');
+    console.log('GET /api/feedback');
     pool.query(`INSERT INTO "feedback" ("feeling", "understanding", "support", "date"
                 VALUES $1, $2, $3, $4;`, [])
     .then((result) => {

@@ -8,9 +8,36 @@ import registerServiceWorker from './registerServiceWorker';
 
 import logger from 'redux-logger';
 
+
+const initialState = {
+    
+    feedback: {
+        feelings: '',
+        comments: '',
+        understanding: '',
+        support: ''
+    }
+};
+
+
+
+
+const feedBackReducer = (state = initialState, action) => {
+    console.log(state);
+    
+    switch (action.type) {
+        case 'ADD_FEEDBACK_TO_DATABASE':
+            return state;
+    
+        default:
+            return state;
+    }
+}
+
+
 const storeInstance = createStore(
     combineReducers({
-        
+        feedBackReducer
     }),
     applyMiddleware(logger)
 )

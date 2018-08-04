@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../Header/Header.js';
 
-class Understanding extends Component {
+
+class Feelings extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            feedback: []
+        };
+    }
+    
+    
+    
     handleClick = () => {
         console.log('clicked');
-        this.props.history.push('/3')
+        this.props.history.push('/2')
     }
     
 
@@ -13,12 +23,11 @@ class Understanding extends Component {
         return (
             <div>
                 <Header />
-                <p>Page 2 of 4</p>
+                <p>Page 1 of 4</p>
                 <button onClick={this.handleClick}>click</button>
             </div>
         )
     }
 }
 
-
-export default connect()(Understanding);
+export default connect()(Feelings);
