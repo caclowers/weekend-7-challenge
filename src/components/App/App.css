@@ -1,10 +1,10 @@
 .App {
   text-align: center;
+  color: blue;
 }
 
 .App-header {
-  background-color: #033076;
-  min-height: 70px;
+    min-height: 70px;
   padding: 20px;
 }
 

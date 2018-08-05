@@ -7,24 +7,47 @@ class Feelings extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            feedback: []
+            feelings: ''
         };
     }
-    
-    
-    
-    handleClick = () => {
-        console.log('clicked');
-        this.props.history.push('/2')
+
+
+   handleFeelingsChange = (event) => {
+        this.setState({
+            feelings: event.target.value
+        });
+        console.log(this.state);
     }
-    
+
+
+    handleClick = (event) => {
+        event.preventDefault();
+        this.props.dispatch({
+            type: 'ADD_FEELINGS_TO_STORE',
+            payload: this.state.feelings
+        });
+        this.props.history.push('/2')
+        console.log(this.state);
+        
+    }
+
+ 
 
     render() {
+        console.log();
+        
         return (
             <div>
                 <Header />
                 <p>Page 1 of 4</p>
-                <button onClick={this.handleClick}>click</button>
+                <div>
+                    <form onSubmit={this.handleClick}>
+                        <h2>How are you feeling today?</h2>
+                        <input onChange={this.handleFeelingsChange} type="number" placeholder="1-5" />
+                        <button type="submit">click</button>
+                    </form>
+                </div>
+
             </div>
         )
     }
