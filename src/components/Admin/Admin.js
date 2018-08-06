@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
 import TableRow from '../TableRow/TableRow.js';
+import axios from 'axios';
 
 
 class Admin extends Component {
+    constructor(props){
+        
+    }
 
-componentDidMount(){
-    axios.get('/').then((results) => {
-        this.props.
-    })
-}
+    componentDidMount(){
+        axios.get('/api/admin').then((results) => {
+           console.log(results.data);
+           this.setState{(
+
+           )}
+        })
+    }
+
+
+
 
     render() {
+
+
+        let tableRowArray = .map((row, index) => {
+            return <TableRow row={row} key={index} />
+        });
+        
+        
         return (
             <div>
                 <header className="App-header">
@@ -28,10 +45,10 @@ componentDidMount(){
                         </tr>
                     </thead>
                     <tbody>
-                        <TableRow />
-                        
-                        
-                        </tbody>
+                        {tableRowArray}
+
+
+                    </tbody>
                 </table>
             </div>
         )

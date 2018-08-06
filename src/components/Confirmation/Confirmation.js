@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Header from '../Header/Header.js';
 import axios from 'axios';
 class Confirmation extends Component {
-   
+
     handleClick = (event) => {
         console.log('clicked');
         console.log(this.props.feedback);
@@ -12,10 +12,10 @@ class Confirmation extends Component {
         axios.post('/api/feedBack', this.props.feedback).then((results) => {
             console.log(results);
             this.props.dispatch({
-            type: 'ADD_FEEDBACK_TO_ADMIN',
-            payload: this.props.feedback
-        });
-        this.props.history.push('/')
+                type: 'ADD_FEEDBACK_TO_ADMIN',
+                payload: this.props.feedback
+            });
+            this.props.history.push('/')
         }).catch((error) => {
             console.log('error in Confirmation handleClick', error);
             console.log('this.state', this.state);
@@ -31,9 +31,9 @@ class Confirmation extends Component {
                 <p>Page Confirmation</p>
                 <div>
                     <form onSubmit={this.handleClick}>
-                    <h2>Thank You for Your Feedback</h2>
-                    <button type="submit">click</button>
-                    </form>    
+                        <h2>Thank You for Your Feedback</h2>
+                        <button type="submit">click</button>
+                    </form>
                 </div>
             </div>
         )
@@ -44,7 +44,7 @@ class Confirmation extends Component {
 
 const mapStateToProps = (state) => {
     return {
-       feedback: state.feedBackReducer
+        feedback: state.feedBackReducer
     }
 };
 

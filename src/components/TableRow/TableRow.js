@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-
+import axios from 'axios';
 class TableRow extends Component {
+
+
     render(){
         return (
             <tr>
-                <td>{this.props.feelings}</td>
-                <td>{this.props.understanding}</td>
-                <td>{this.props.support}</td>
-                <td>{this.props.comments}</td>
+                <td>{this.props.row.feelings}</td>
+                <td>{this.props.row.understanding}</td>
+                <td>{this.props.row.support}</td>
+                <td>{this.props.row.comments}</td>
                 <td><button>DELETE</button></td>
             </tr>
         );
