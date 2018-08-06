@@ -4,16 +4,20 @@ import axios from 'axios';
 
 
 class Admin extends Component {
-    constructor(props){
-        
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            feedBackList: []
+        }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         axios.get('/api/admin').then((results) => {
-           console.log(results.data);
-           this.setState{(
-
-           )}
+            console.log(results.data);
+            this.setState({
+                feedBackList: results.data
+            })
         })
     }
 
@@ -23,11 +27,12 @@ class Admin extends Component {
     render() {
 
 
-        let tableRowArray = .map((row, index) => {
+
+        let tableRowArray = this.state.feedBackList.map((row, index) => {
             return <TableRow row={row} key={index} />
         });
-        
-        
+
+
         return (
             <div>
                 <header className="App-header">

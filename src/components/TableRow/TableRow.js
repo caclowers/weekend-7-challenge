@@ -7,7 +7,7 @@ class TableRow extends Component {
     render(){
         return (
             <tr>
-                <td>{this.props.row.feelings}</td>
+                <td>{this.props.row.feeling}</td>
                 <td>{this.props.row.understanding}</td>
                 <td>{this.props.row.support}</td>
                 <td>{this.props.row.comments}</td>
